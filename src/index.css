@@ -38,7 +38,6 @@ body{
 header{
   background-color: white;
   box-shadow: var(--card-shadow);
-  position: sticky;
   top: 0;
   z-index: 100;
   padding: 15px 0;
@@ -471,4 +470,147 @@ button:disabled {
   font-size: 0.9rem;
   color: var(--gray-color);
   min-height: 20px;
+}
+
+@media (max-width: 992px) {
+  
+  header .container {
+    gap: 300px;
+  }
+  
+  .logo {
+    margin-left: 50px;
+  }
+  
+  nav {
+    margin-right: 50px;
+  }
+  
+  .hero, .about {
+    margin-left: 80px;
+    margin-right: 60px;
+  }
+  
+  .features {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+  
+  .summarizer-tool {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px 0;
+  }
+  
+  .logo {
+    margin-left: 0;
+    justify-content: center;
+  }
+  
+  nav {
+    margin-right: 0;
+    justify-content: center;
+  }
+  
+  .hero, .about {
+    flex-direction: column;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center;
+  }
+  
+  .hero-image, .DevImg {
+    order: -1;
+  }
+  
+  .features {
+    padding: 40px 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  
+  .stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .section-subtitle {
+    text-align: center;
+  }
+  
+  .summarizer-tool {
+    padding: 20px;
+  }
+  
+  footer {
+    flex-direction: column;
+  }
+  
+  .left, .right {
+    min-width: 100%;
+  }
+  
+  .right h3 {
+    width: 100%;
+  }
+  
+}
+
+@media (max-width: 576px) {
+  header .container {
+    gap: 20px;
+  }
+  
+  .hero, .about, .features {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+  
+  .features h2 {
+    font-size: 1.8rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-section h3 {
+    font-size: 1.3rem;
+  }
+  
+  .output-actions {
+    flex-direction: column;
+  }
+  
+  button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  nav {
+    flex-wrap: wrap;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-content p, .about-content p {
+    font-size: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
 }
