@@ -69,43 +69,24 @@ const fetchSummary = async () => {
   setIsLoading(true);
   
   try {
-<<<<<<< HEAD
     
     const response = await axios.post(
-  `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5:generateContent?key=${import.meta.env.VITE_GEMINI_API_KEY}`,
+  `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${
+    import.meta.env.VITE_GEMINI_API_KEY
+  }`,
   {
     contents: [
       {
-        parts: [{ text: generatePrompt() }]
-      }
-    ]
+        parts: [{ text: generatePrompt() }],
+      },
+    ],
   },
   {
     headers: {
-      "Content-Type": "application/json"
-    }
+      "Content-Type": "application/json",
+    },
   }
 );
-
-=======
-    const response = await axios.post(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${
-        import.meta.env.VITE_GEMINI_API_KEY
-    }`,
-      {
-        contents: [
-          {
-            parts: [{ text: generatePrompt() }],
-          },
-        ],
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
->>>>>>> 80d32050faa863eaf7bd2b8d0fcc956e4bbc3428
 const summarizedContent =
     response.data.candidates?.[0]?.content?.parts?.[0]?.text || 
     "No summary could be generated. Please try again with different content.";
@@ -218,9 +199,5 @@ document.body.removeChild(element);
   );
 }
 
-<<<<<<< HEAD
 export default Home;
 
-=======
-export default Home;
->>>>>>> 80d32050faa863eaf7bd2b8d0fcc956e4bbc3428
